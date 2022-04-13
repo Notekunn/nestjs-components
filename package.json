@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -16,7 +19,14 @@
   "scripts": {
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "ci:test": "yarn format:check && yarn lint && yarn test",
+    "ci:install": "yarn install --frozen-lockfile",
+    "ci:build": "lerna run build",
+    "ci:release": "lerna publish"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
