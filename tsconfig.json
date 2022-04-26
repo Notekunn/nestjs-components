@@ -1,0 +1,39 @@
+{
+  /* Base Typescript configuration for all packages */
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2017" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
+    "module": "commonjs" /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */,
+    "lib": ["es2015", "es6", "es7", "dom"] /* Specify library files to be included in the compilation:  */,
+    "allowJs": false /* Allow javascript files to be compiled. */,
+    "checkJs": false /* Report errors in .js files. */,
+    "noEmit": true /* Set to true because used only for type checking */,
+
+    "skipLibCheck": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true /* Enable all strict type-checking options. */,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["packages/*/src/**/*", "packages/*/test/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "packages/*/node_modules",
+    "packages/*/lib",
+    "packages/*/dist",
+    "packages/*/coverage",
+    "/lib",
+    "/build",
+    "/.git",
+    "package.json",
+    "lerna.json"
+  ]
+}
